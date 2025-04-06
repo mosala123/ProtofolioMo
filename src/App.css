@@ -1,0 +1,6 @@
+ .footer:hover{
+    transform: rotate(360deg);
+ }
+ .footer{
+    transition: 0.4s ease-in-out;
+ }

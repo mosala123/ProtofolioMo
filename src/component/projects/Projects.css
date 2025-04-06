@@ -1,0 +1,62 @@
+.Projects .button1{
+    border: 2px solid  #8e00ff;
+    color: white;
+    position: relative;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    outline: none;
+}
+.Projects .button1::before{
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #8e00ff;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+.Projects .button1:hover::before {
+    width: 100%;
+  }
+
+
+  .Projects .button2{
+    border: 2px solid  #8e00ff;
+    color: white;
+    position: relative;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    outline: none;
+    background-color: #8e00ff;
+}
+.Projects .button2::before{
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #282C33;
+    z-index: -1;
+    transition: width 0.5s ease;
+}
+.Projects .button2:hover::before {
+    width: 100%;
+  }
+  .Projects .card{
+    transition: 0.4s ease-in-out;
+    border-radius: 14px;
+  }
+  .Projects .card:hover{
+    transform: rotate(2deg);
+  }
