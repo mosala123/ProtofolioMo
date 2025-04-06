@@ -1,5 +1,6 @@
 {
-  "homepage": "https://mosala123.github.io/protofolioME",
+"homepage": "https://mosala123.github.io/protofolioME",
+
   "name": "profile-betaa3y",
   "private": true,
   "version": "0.0.0",
@@ -9,8 +10,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+   "predeploy": "npm run build",
+"deploy": "gh-pages -d dist"
+
   },
   "dependencies": {
     "bootstrap": "^5.3.4",

@@ -18,14 +18,14 @@ function App() {
       <Navbar />
 
       <Routes >
-        <Route path='/protofolioME' element={<HomePages />} />
-        <Route path='/protofolioME/AboutMe' element={<AboutMe />} />
-        <Route path='/protofolioME/AllAboutMe' element={<AllAboutMe />} />
-        <Route path='/protofolioME/Contactme' element={<Contactme />} />
-        <Route path='/protofolioME/FormContact' element={<FormContact />} />
-        <Route path='/protofolioME/Projects' element={<Projects />} />
-        <Route path='/protofolioME/ProjectsAll' element={<ProjectsAll />} />
-        <Route path='/protofolioME/SkilsMe' element={<SkilsMe />} />
+        <Route path='/' element={<HomePages />} />
+        <Route path='/AboutMe' element={<AboutMe />} />
+        <Route path='/AllAboutMe' element={<AllAboutMe />} />
+        <Route path='/Contactme' element={<Contactme />} />
+        <Route path='/FormContact' element={<FormContact />} />
+        <Route path='/Projects' element={<Projects />} />
+        <Route path='/ProjectsAll' element={<ProjectsAll />} />
+        <Route path='/SkilsMe' element={<SkilsMe />} />
       </Routes>
       <Footer />
     </div>
