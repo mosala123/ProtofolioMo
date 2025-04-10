@@ -21,13 +21,14 @@ const Navbar = () => {
       </div>
 
       <div className={`links ${menuOpen ? 'open' : ''}`}>
-        <ul className="linksul">
-          <li><Link to="/protofolioME">Home</Link></li>
-          <li><Link to="/protofolioME/ProjectsAll">Works</Link></li>
-          <li><Link to="/protofolioME/AllAboutMe">About-Me</Link></li>
-          <li><Link to="/protofolioME/FormContact">Contacts</Link></li>
-        </ul>
-      </div>
+  <ul className="linksul">
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/projectsAll">Works</Link></li>
+    <li><Link to="/allAboutMe">About-Me</Link></li>
+    <li><Link to="/formContact">Contacts</Link></li>
+  </ul>
+</div>
+ 
     </div>
   );
 };

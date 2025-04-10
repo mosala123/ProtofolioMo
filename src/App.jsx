@@ -17,16 +17,17 @@ function App() {
     <div style={{ backgroundColor: '#282C33', minHeight: '100vh',color:"white" }}>
       <Navbar />
 
-      <Routes >
-        <Route path='/protofolioME' element={<HomePages />} />
-        <Route path='/protofolioME/AboutMe' element={<AboutMe />} />
-        <Route path='/protofolioME/AllAboutMe' element={<AllAboutMe />} />
-        <Route path='/protofolioME/Contactme' element={<Contactme />} />
-        <Route path='/protofolioME/FormContact' element={<FormContact />} />
-        <Route path='/protofolioME/Projects' element={<Projects />} />
-        <Route path='/protofolioME/ProjectsAll' element={<ProjectsAll />} />
-        <Route path='/protofolioME/SkilsMe' element={<SkilsMe />} />
-      </Routes>
+   <Routes >
+   <Route path='/' element={<HomePages />} />
+   <Route path='/aboutMe' element={<AboutMe />} />
+   <Route path='/allAboutMe' element={<AllAboutMe />} />
+   <Route path='/contactme' element={<Contactme />} />
+   <Route path='/formContact' element={<FormContact />} />
+   <Route path='/projects' element={<Projects />} />
+   <Route path='/projectsAll' element={<ProjectsAll />} />
+   <Route path='/skilsMe' element={<SkilsMe />} />
+</Routes>
+
       <Footer />
     </div>
   )
