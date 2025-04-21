@@ -26,10 +26,10 @@ const FormContact = () => {
 
     emailjs
       .send(
-        'service_r125spp', // Service ID
-        'template_qpvpw2j', // Template ID
+        'service_r125spp', 
+        'template_qpvpw2j', 
         templateParams,
-        'bnUyzrFs3ckfOL59_' // Public Key
+        'bnUyzrFs3ckfOL59_'  
       )
       .then(
         (response) => {
@@ -65,7 +65,6 @@ const FormContact = () => {
       >
         <h2 className="text-start  text-light mb-4">Contact Us</h2>
 
-        {/* صف يحتوي على أول اتنين input جنب بعض على الشاشات الكبيرة */}
         <div className="row">
           <div className="col-md-6 mb-3">
             <input
@@ -90,8 +89,7 @@ const FormContact = () => {
             />
           </div>
         </div>
-
-        {/* بعد كده العنوان والرسالة تحت بعض */}
+ 
         <div className="mb-3">
           <input
                      style={{backgroundColor:"transparent",border:"2px solid #8e00ff",color:"white"}}
@@ -114,24 +112,24 @@ const FormContact = () => {
           ></textarea>
         </div>
 
-        {/* زرار الإرسال */}
+        
         <div className="text-start">
           <button type="submit" className="btn  px-4 mt-4" style={{backgroundColor:"#8e00ff",color:"white"}}>
             Send
           </button>
         </div>
 
-        {/* رسالة الحالة */}
+        
         {status && (
           <p className="text-center mt-3 text-light">{status}</p>
         )}
       </form>
 
-      {/* هنا نضيف ستايل خاص بالـ placeholder */}
+    
       <style>{`
         .custom-placeholder::placeholder {
           color: white;
-          opacity: 1; /* ضروري عشان يظهر اللون */
+          opacity: 1; 
         }
       `}</style>
       <Backpage />

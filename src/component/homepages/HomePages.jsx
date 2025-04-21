@@ -18,11 +18,11 @@ const HomePages = () => {
             <div className="typewriter">
               <h1 className='mt-4 fs-3'>
                  Mohamed Ibrahim Salah</h1>
-              <p className='fs-3 mt-3'>A  <span className='fs-2'
+              <p className='fs-3 mt-3 mb-4'>A  <span className='fs-2'
                 style={{ color: "#c778dd" }}>Frontend Developer
               </span> specializing in  <span style={{ color: "#c778dd" }}> React.js </span>,
                 I build engaging and functional user interfaces that contribute to achieving user goals.</p>
-              <Link to="/FormContact" className='Contactme fs-4 mt-2 mb-4 '>Contact me !</Link>
+              <Link to="/FormContact" className='Contactme fs-4 mt-2 mb-4 ' style={{textDecoration:"none"}}>Contact me !</Link>
             </div>
 
 

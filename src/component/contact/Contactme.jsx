@@ -32,19 +32,19 @@ const Contactme = () => {
                         </p>
 
                     </div>
-                    <button className='  button1 mb-4 mt-2 btn '>Contacts Me </button>
+                    <Link  style={{ textDecoration: "none" }} to="/formContact" className='  button1 mb-4 mt-2 btn '>Contacts Me </Link>
                 </div>
 
 
                 <div className="col-lg-4 col-md-12 col-sm-12 Projects">
                     <div className='card text-light p-4' style={{ backgroundColor: "transparent", border: "2px solid #8e00ff" }}>
                         <h4>Message me here</h4>
-                        <div className="d-flex gap-3 mt-2">
-                            <p><FaRegMessage /> </p>
+                        <div className="d-flex gap-3 mt-2 align-items-center ">
+                             <FaRegMessage />  
                             <Link to="/elmosalah74@gmail.com" className='text-light'>elmosalah74@gmail.com</Link>
                         </div>
-                        <div className="d-flex gap-3 mt-2">
-                            <p><FaPhoneAlt /> </p>
+                        <div className="d-flex gap-3 mt-2 align-items-center">
+                             <FaPhoneAlt />  
                             <Link style={{ textDecoration: "none" }} to="/" className='text-light'>+201024668770</Link>
                         </div>
                     </div>

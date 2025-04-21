@@ -14,7 +14,7 @@ import FormContact from './component/contact/FormContact'
 function App() {
 
   return (
-    <div style={{ backgroundColor: '#282C33', minHeight: '100vh',color:"white" }}>
+    <div style={{ backgroundColor: '#282C33', minHeight: '100vh',color:"white" ,width:"100%"}}>
       <Navbar />
 
    <Routes >

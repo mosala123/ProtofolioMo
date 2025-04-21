@@ -27,7 +27,7 @@
     transition: .5s ease;
   }
   .Navbar .links ul li a:hover{
-    color: #c778dd;
+    color: #282C33;
   }
   .bar {
     font-size: 30px;
@@ -52,7 +52,7 @@
       left: -100%;  
       padding: 20px 10px;
       top: 70px;
-      height: 300px;
+      height: 270px;
       width: auto;
       transition: left 1s ease-in-out;
       border-radius: 0 10px 10px 0;

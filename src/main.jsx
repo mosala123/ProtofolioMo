@@ -7,11 +7,10 @@ import { BrowserRouter, Routes } from "react-router-dom";
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 
-    <BrowserRouter basename="/protofolioME">
-      <Routes>
-
+    <BrowserRouter  >
+    
         <App />
-      </Routes>
+     
     </BrowserRouter>
 
   </StrictMode>,

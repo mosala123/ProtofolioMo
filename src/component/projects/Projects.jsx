@@ -74,7 +74,7 @@ const Allprojects = [
 const Projects = () => {
   return (
     <div className='container Projects text-light px-3 mt-5 pb-5 pt-5' style={{ minHeight: "100vh" }}>
-      <div className='mt-5 d-flex align-items-center justify-content-between'>
+      <div className='mt-5 d-flex align-items-center justify-content-between flex-wrap'>
         <div className='d-flex align-items-center gap-3'>
           <h2 className="mb-2">Projects</h2>
           <div style={{ width: "200px", height: "2px", backgroundColor: "#8e00ff" }}></div>

@@ -1,3 +1,11 @@
+body {
+  overflow-x: hidden;
+}
+
+.HomePages {
+  width: 100%;
+  overflow-x: hidden;
+}
 .typewriter h1   {
     overflow: hidden;              
     white-space: nowrap;          
@@ -25,7 +33,7 @@
     overflow: hidden;
     transition: color 0.4s ease-in-out;
     z-index: 1;
-    border-radius: 20px ;
+    border-radius: 10px ;
     padding: 6px 17px ;
   }
   
@@ -38,6 +46,7 @@
     top: 0;
     left: 0;
     z-index: -1;
+    border-radius: 10px ;
     transition: width 0.4s ease-in-out;
   }
   
