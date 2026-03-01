@@ -1,6 +1,6 @@
 import React from 'react'
 import "./HomePages.css" // استيراد ملف CSS العادي
-import imagesme from "../../../public/images/Image1.png"
+import imagesme from "/images/Image1.png" // تم تعديل المسار هنا
 import Projects from '../projects/Projects'
 import SkilsMe from '../skils/SkilsMe'
 import AboutMe from '../aboutme/AboutMe'
@@ -41,7 +41,7 @@ const HomePages = () => {
               {/* Headline - شكل الخط المحسن */}
               <h2 className="hero-headline">
                 Building <span className="gradient-text">Modern</span> Web
-                <br />Experiences with <span className="gradient-text">React.js</span>
+                <br />Experiences with <span className="gradient-text">React.js Next.Js</span>
               </h2>
 
               {/* Description */}
