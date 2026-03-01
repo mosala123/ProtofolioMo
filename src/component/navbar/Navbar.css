@@ -1,70 +1,193 @@
-.Navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 10%;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    color: white;
-    z-index: 9999;
-    background-color: #282C33;
-  }
-  
-  .Navbar .links ul {
-    display: flex;
-  }
-  
-  .Navbar .links ul li {
-    list-style-type: none;
-  }
-  
-  .Navbar .links ul li a {
-    text-decoration: none;
-    color: white;
-    margin: 0 10px;
-    font-size: 19px;
-    transition: .5s ease;
-  }
-  .Navbar .links ul li a:hover{
-    color: #282C33;
-  }
-  .bar {
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
-    position: absolute;
-    right: 20px;
-  }
-  
-  @media screen and (max-width: 1080px) {
-    .bar {
-      display: block;
-    }
-  
-    .linksul {
-      background-color: #c778dd;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-around;
-      position: absolute;
-      left: -100%;  
-      padding: 20px 10px;
-      top: 70px;
-      height: 270px;
-      width: auto;
-      transition: left 1s ease-in-out;
-      border-radius: 0 10px 10px 0;
-    z-index: 9999;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
 
-    }
-  
-    .links.open .linksul {
-      left: 0;
-    }
-  
-    .linksul li {
-      margin: 10px 0;
-    }
+:root {
+  --purple: #8e00ff;
+  --pink: #c778dd;
+  --dark: #282C33;
+  --darker: rgba(28, 31, 38, 0.97);
+}
+
+/* ===== NAVBAR ===== */
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  height: 68px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  z-index: 9999;
+  background: var(--darker);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(142, 0, 255, 0.18);
+  transition: box-shadow 0.3s;
+}
+
+.Navbar:hover {
+  box-shadow: 0 4px 30px rgba(142, 0, 255, 0.1);
+}
+
+/* Logo */
+.Navbar .logo p {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.2rem;
+  color: white;
+  margin: 0;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+.Navbar .logo p:hover {
+  color: var(--pink);
+}
+
+.Navbar .logo .bracket {
+  color: var(--purple);
+}
+
+/* Links */
+.Navbar .links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+}
+
+.Navbar .links ul li a {
+  text-decoration: none;
+  color: #9aa3b0;
+  padding: 8px 14px;
+  font-size: 15px;
+  font-family: 'Fira Code', monospace;
+  transition: color 0.3s ease;
+  border-radius: 8px;
+  position: relative;
+  display: block;
+}
+
+/* Hover */
+.Navbar .links ul li a:hover {
+  color: white;
+  background: rgba(142, 0, 255, 0.08);
+}
+
+/* Hash prefix on hover */
+.Navbar .links ul li a::before {
+  content: '#';
+  color: var(--purple);
+  font-weight: 700;
+  opacity: 0;
+  margin-right: 2px;
+  transition: opacity 0.25s ease;
+}
+
+.Navbar .links ul li a:hover::before,
+.Navbar .links ul li a.active-link::before {
+  opacity: 1;
+}
+
+/* Active link */
+.Navbar .links ul li a.active-link {
+  color: white;
+  background: rgba(142, 0, 255, 0.1);
+}
+
+/* Active underline bar */
+.Navbar .links ul li a.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--pink));
+  border-radius: 2px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ===== HAMBURGER ===== */
+.bar {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  color: #9aa3b0;
+  transition: color 0.3s, transform 0.3s;
+  z-index: 9999;
+}
+
+.bar:hover {
+  color: var(--purple);
+  transform: rotate(90deg);
+}
+
+.bar.open {
+  transform: rotate(90deg);
+  color: var(--pink);
+}
+
+/* ===== MOBILE MENU ===== */
+@media screen and (max-width: 1080px) {
+  .bar {
+    display: block;
   }
+
+  .linksul {
+    background: rgba(22, 24, 30, 0.98);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    position: fixed;
+    left: -100%;
+    top: 68px;
+    height: calc(100vh - 68px);
+    width: 260px;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-right: 1px solid rgba(142, 0, 255, 0.25);
+    padding: 24px 16px;
+    z-index: 9998;
+  }
+
+  .links.open .linksul {
+    left: 0;
+  }
+
+  .linksul li a {
+    display: block;
+    padding: 14px 18px !important;
+    font-size: 17px !important;
+    border-radius: 10px;
+  }
+
+  .linksul li a.active-link::after {
+    display: none;
+  }
+
+  .linksul li a.active-link {
+    border-left: 3px solid var(--purple);
+    padding-left: 15px !important;
+  }
+
+  /* Overlay */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9997;
+    top: 68px;
+  }
+
+  .links.open ~ .menu-overlay {
+    display: block;
+  }
+}

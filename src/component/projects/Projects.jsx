@@ -1,116 +1,168 @@
 import React from 'react'
-import { FaLongArrowAltRight } from "react-icons/fa";
-import rafiqa from "../../../public/images/reqia.jpg"
-import shoponline from "../../../public/images/shop.jpg"
-import wraether from "../../../public/images/wraether.jpg"
-import drgon from "../../../public/images/drgon.jpg"
-import Contemporary from "../../../public/images/Contemporary.jpg"
-import producthub from "../../../public/images/producthub.jpg"
-import codelearn from "../../../public/images/codelearn.jpg"
-import protofile from "../../../public/images/protofile.jpg"
+import { FaLongArrowAltRight, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import "./Projects.css"
 
-const Allprojects = [
+// Old project images
+import rafiqa from "../../../public/images/reqia.jpg"
+import wraether from "../../../public/images/wraether.jpg"
+import producthub from "../../../public/images/producthub.jpg"
+
+// Generated SVG thumbnails (place this file in src/component/projects/)
+import {
+  xhubThumb,
+  footballThumb,
+  myenglishThumb,
+  flavorlandThumb,
+  fixedcarThumb
+} from './projectThumbnails.js'
+
+const featuredProjects = [
   {
-    title: "Rafiq",
-    description: "Your companion in spreading good and religious knowledge. Built with love and purpose.",
-    linkRepository: "https://mosala123.github.io/Rafiq",
-    linkGitHub: "https://github.com/mosala123/Rafiq",
-    image: rafiqa,
-    catogry:"react js "
+    title: "X-Hub",
+    description: "A modern e-commerce platform built with Next.js. Product listings, cart management, and seamless shopping experience.",
+    repository: "https://x-hub-eight.vercel.app/",
+    github: "https://github.com/mosala123/x-hub",
+    image: xhubThumb,
+    tags: ["Next.js", "React", "CSS"],
+    badge: "Next.js",
+    badgeStyle: { bg: "rgba(255,255,255,0.08)", color: "#ffffff" }
   },
   {
-    title: "Shop Online",
-    description: "An online shopping platform offering the best deals. Designed for a smooth shopping experience.",
-    linkRepository: "https://mosala123.github.io/ecommerce-finnally",
-    linkGitHub: "https://github.com/mosala123/ecommerce-finnally",
-    image: shoponline,
-    catogry:"boostrap  "
+    title: "Football App",
+    description: "Live football scores, standings, and match details. Real-time sports data with smooth React interface.",
+    repository: "https://football-blond.vercel.app/",
+    github: "https://github.com/mosala123/football",
+    image: footballThumb,
+    tags: ["React.js", "Sports API", "Bootstrap"],
+    badge: "React.js",
+    badgeStyle: { bg: "rgba(97,218,251,0.1)", color: "#61DAFB" }
   },
   {
-    title: "Weather App",
-    description: "Weather forecast and current updates anywhere you go. Simple, fast, and reliable.",
-    linkRepository: "https://mosala123.github.io/weather-api/",
-    linkGitHub: "https://github.com/mosala123/weather-api",
-    image: wraether
+    title: "Invoices System",
+    description: "Graduation project — full invoice management system with CRUD operations and professional dashboard.",
+    repository: "https://invoices-2i8q.vercel.app/",
+    github: "https://github.com/mosala123/invoices",
+    image: null,
+    tags: ["React.js", "Redux", "Firebase"],
+    badge: "🎓 Graduation",
+    badgeStyle: { bg: "rgba(255,215,0,0.1)", color: "#FFD700" }
   },
   {
-    title: "Dragon Game",
-    description: "Adventure dragon-themed game full of fun and challenges. Dive into an epic world.",
-    linkRepository: "https://mosala123.github.io/dragon-game/",
-    linkGitHub: "https://github.com/mosala123/dragon-game",
-    image: drgon
+    title: "Fixed Car",
+    description: "Car maintenance & repair service platform. Browse services, book appointments, track your vehicle.",
+    repository: "https://fixed-car.vercel.app/",
+    github: "https://github.com/mosala123/fixed-car",
+    image: fixedcarThumb,
+    tags: ["React.js", "CSS", "Bootstrap"],
+    badge: "React.js",
+    badgeStyle: { bg: "rgba(97,218,251,0.1)", color: "#61DAFB" }
   },
   {
-    title: "Contemporary Portfolio",
-    description: "Modern portfolio website showcasing talents and work. Built with style and creativity.",
-    linkRepository: "https://mosala123.github.io/Contemporary",
-    linkGitHub: "https://github.com/mosala123/Contemporary",
-    image: Contemporary
+    title: "FlavorLand",
+    description: "A rich food & recipe platform. Discover, filter and explore recipes from cuisines around the world.",
+    repository: "#",
+    github: "https://github.com/mosala123/FlavorLand",
+    image: flavorlandThumb,
+    tags: ["React.js", "API", "CSS"],
+    badge: "React.js",
+    badgeStyle: { bg: "rgba(97,218,251,0.1)", color: "#61DAFB" }
   },
   {
-    title: "Product Hub",
-    description: "Central hub to display and manage products. Organized and user-friendly.",
-    linkRepository: "https://mosala123.github.io/producthub/",
-    linkGitHub: "https://github.com/mosala123/producthub",
-    image: producthub
-  },
-  {
-    title: "Code Learn",
-    description: "Learn coding through interactive tutorials and examples. Easy and intuitive platform.",
-    linkRepository: "https://mosala123.github.io/CodeLearn/",
-    linkGitHub: "https://github.com/mosala123/CodeLearn",
-    image: codelearn
-  },
-  {
-    title: "Personal Profile",
-    description: "Personal profile website to showcase skills and experience. Clean and professional design.",
-    linkRepository: "https://mosala123.github.io/protofile/",
-    linkGitHub: "https://github.com/mosala123/protofile",
-    image: protofile
+    title: "My English",
+    description: "Interactive English learning platform with vocabulary, quizzes, and progress tracking.",
+    repository: "#",
+    github: "https://github.com/mosala123/my-english",
+    image: myenglishThumb,
+    tags: ["React.js", "CSS"],
+    badge: "React.js",
+    badgeStyle: { bg: "rgba(97,218,251,0.1)", color: "#61DAFB" }
   },
 ];
 
 const Projects = () => {
   return (
-    <div className='container Projects text-light px-3 mt-5 pb-5 pt-5' style={{ minHeight: "100vh" }}>
-      <div className='mt-5 d-flex align-items-center justify-content-between flex-wrap'>
+    <div className='container Projects text-light px-3 mt-5 pb-5 pt-5' style={{ minHeight: "80vh" }}>
+
+      <div className='mt-5 d-flex align-items-center justify-content-between flex-wrap gap-3'>
         <div className='d-flex align-items-center gap-3'>
-          <h2 className="mb-2">Projects</h2>
-          <div style={{ width: "200px", height: "2px", backgroundColor: "#8e00ff" }}></div>
+          <h2 className="mb-0 fw-bold">Projects</h2>
+          <div className="section-line"></div>
         </div>
-
-        <a href="/ProjectsAll" className="text-light gap-2 d-flex align-items-center pb-1 ">
+        <Link to="/projectsAll" className="view-all-link">
           View all <FaLongArrowAltRight />
-        </a>
+        </Link>
       </div>
-  
+      <p style={{ color: "#8e00ff", fontFamily: "'Fira Code', monospace", fontSize: "13px", marginTop: "6px" }}>
+        // Featured work — {featuredProjects.length} projects
+      </p>
 
-  
-      <div className="row mt-4 justify-content-center">
-        {Allprojects.map((project, index) => (
-          <div key={index} className='col-lg-4 col-md-6 col-sm-12'>
-            <div className="card mb-4" style={{ backgroundColor: "transparent", color: "white", border: "2px solid #8e00ff" }}>
-              <img
-                className="card-img-top"
-                src={project.image}
-                alt={project.title}
-                style={{ height: "230px", borderRadius: "13px 13px 0 0" }}
-              />
+      <div className="row mt-3 g-4">
+        {featuredProjects.map((project, index) => (
+          <div key={index} className='col-lg-4 col-md-6 col-12'>
+            <div className="project-card">
+
+              {/* Image / Thumbnail */}
+              {project.image ? (
+                <div className="img-wrapper">
+                  <img src={project.image} alt={project.title} />
+                  <div className="img-overlay">
+                    {project.repository !== "#" && (
+                      <a href={project.repository} className="overlay-btn" target="_blank" rel="noopener noreferrer">
+                        <FaExternalLinkAlt style={{ marginRight: "6px", fontSize: "11px" }} />Live Demo
+                      </a>
+                    )}
+                    <a href={project.github} className="overlay-btn gh" target="_blank" rel="noopener noreferrer">
+                      <FaGithub style={{ marginRight: "6px" }} />GitHub
+                    </a>
+                  </div>
+                </div>
+              ) : null}
+
+              {/* Badge */}
+              <div style={{ padding: project.image ? "12px 20px 0" : "18px 20px 0" }}>
+                <span style={{
+                  background: project.badgeStyle.bg,
+                  color: project.badgeStyle.color,
+                  border: `1px solid ${project.badgeStyle.color}44`,
+                  padding: "3px 12px",
+                  borderRadius: "12px",
+                  fontSize: "11px",
+                  fontFamily: "'Fira Code', monospace",
+                  fontWeight: "600"
+                }}>
+                  {project.badge}
+                </span>
+              </div>
+
               <div className="card-body">
                 <h5 className="card-title">{project.title}</h5>
                 <p className="card-text">{project.description}</p>
-                <div className='d-flex align-items-center gap-3'>
-                  <a href={project.linkRepository} className="button1" style={{ whiteSpace: "normal" }} target="_blank" rel="noopener noreferrer">Repository</a>
-                  <a href={project.linkGitHub} className="button2" style={{ whiteSpace: "normal" }} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <div className="tech-tags">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="tech-tag">{tag}</span>
+                  ))}
                 </div>
+                {/* Links for cards without image overlay */}
+                {!project.image && (
+                  <div className="d-flex gap-2 mt-3 flex-wrap">
+                    {project.repository !== "#" && (
+                      <a href={project.repository} target="_blank" rel="noopener noreferrer" className="project-link-btn">
+                        <FaExternalLinkAlt style={{ marginRight: "6px", fontSize: "11px" }} />Live Demo
+                      </a>
+                    )}
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link-btn ghost">
+                      <FaGithub style={{ marginRight: "6px" }} />GitHub
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Projects;

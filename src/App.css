@@ -1,6 +1,38 @@
- .footer:hover{
-    transform: rotate(360deg);
- }
- .footer{
-    transition: 0.4s ease-in-out;
- }
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1d23;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8e00ff;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c778dd;
+}
+
+/* Selection */
+::selection {
+  background: rgba(142, 0, 255, 0.3);
+  color: white;
+}
+
+/* Footer hover icon */
+.footer {
+  transition: 0.3s ease;
+}
+
+.footer:hover {
+  transform: translateY(-3px);
+}
